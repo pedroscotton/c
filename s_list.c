@@ -108,5 +108,26 @@ void print_list(list *lista){
 		}
 	}
 }
+int have_node(list *lista, char chave[201]){
+	int size= lista->size;
+	int i=0;
+	node *aux;
+	printf("Size %d\n",size);
+	if(size == 0){
+		return 0;	
+	}
+	else{
+		aux = lista->head;
+		for(i=1;i<size +1; i++){
+			//printf("aux->chave:'%s', chave:'%s'\n",aux->chave,chave);
+			if(strncmp(aux->chave,chave,5) == 0) return 1;
+			aux = aux->next; 
+		}
+	}
+	return -1;
+}
+
+int search_node(list *lista, char chave[201]){
+}
 
 #endif

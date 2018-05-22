@@ -8,6 +8,9 @@ void ask_node_tail(list *lista);
 void add_head(list *lista, int ivalor, char cchave[201]);
 void add_tail(list *lista, int ivalor, char cchave[201]);
 void print_list(list *lista);
+int have_node(list *lista, char chave[201]);
+int search_node(list *lista, char chave[201]);
+int have_node(list *lista, char chave[201]);
 
 
 #endif

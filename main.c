@@ -20,6 +20,7 @@ void print_entry(char *entry) {
 
 int main(int argc, char *argv[]) {
 	char input[201];
+	char chave[201];
 	list *lista;
 	lista = create_list();
 
@@ -48,6 +49,16 @@ int main(int argc, char *argv[]) {
 		}
 		if (strncmp(input, "addt\n", 5) == 0) {
 			ask_node_tail(lista);
+			
+		}
+
+		if (strncmp(input, "havenode\n", 5) == 0) {
+			printf("Insira a chave para verificar se está contida na lista\n");	
+			scanf("%s",chave);
+			int resultado = have_node(lista,chave);
+			if(resultado == 0) printf("Chave não encontrada, lista vazia\n");
+			if(resultado == -1)printf("Chave não encontrada\n");
+			if(resultado == 1) printf("Chave encontrada\n");
 			
 		}
 		
