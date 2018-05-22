@@ -20,6 +20,8 @@ void print_entry(char *entry) {
 
 int main(int argc, char *argv[]) {
 	char input[201];
+	list *lista;
+	lista = create_list();
 
 	while(1) {
 		printf("prompt> ");
@@ -32,8 +34,25 @@ int main(int argc, char *argv[]) {
 			printf("Leaving. Good bye.\n");
 			break;
 		}
+		if (strncmp(input, "size\n", 5) == 0) {
+			printf("Size = %x\n",lista->size);
+			printf("Size = %d\n",lista->size);
+			
+		}
+		if (strncmp(input, "print\n", 5) == 0) {
+			print_list(lista);	
+		}
+		if (strncmp(input, "addh\n", 5) == 0) {
+			ask_node_head(lista);
+			
+		}
+		if (strncmp(input, "addt\n", 5) == 0) {
+			ask_node_tail(lista);
+			
+		}
 		
-		print_entry(input);
+		//print_entry(input);
+		
 		
 	}
 
